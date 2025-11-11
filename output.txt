@@ -1,0 +1,3311 @@
+AI/Run
+.Transform
+Changing the present and shaping the future of AI-Native Engineering
+OCTOBER 2025
+
+EPAM P roprietary & Confidential.
+
+1
+
+Agenda
+
+01 State of AI in Software Development: Key Themes for 2025
+02 AI Adoption Strategy
+03 EPAM’s Expertise & Experience in End-to-End SDLC Capabilities
+05 Lessons Learned from Large-Scale Client Adoptions
+
+EPAM P roprietary & Confidential.
+
+3
+
+01
+
+State of AI
+in Software Development:
+Key Themes for 2025
+• Industry AI spend
+• Models rapid progression
+• Maturing technology and techniques
+• Main themes and trends
+
+EPAM P roprietary & Confidential.
+
+4
+
+Agentic Project
+Teams
+
+AI ENG INEERING FUTURE OUTLOOK
+
+Future of AI in Software Development
+
+Post Agile Humansto-Agents and
+Agents-to-Agents
+software
+development
+lifecycle paradigm
+shift
+
+Chat-Oriented
+Programming
+
+“META-AGILE”
+
+“META-AGILE” –
+
+• Increasingly chat driven
+interactions to write code
+
+AI Code-Completion
+AI as an assistants for
+recommending next set of lines of
+code
+
+Task Length: 30 sec – 1 min
+
+• Agents are embedded into current
+interface
+• Humans are heavily in the loop
+
+Autonomous AI
+Workflows
+AI-driven batch workflows
+to tackle complex tasks
+like migrating applications
+from one framework to
+another, bulk security
+issues resolution, and
+automated test coverage
+
+Forming fully autonomous
+AI project teams capable of
+taking ownership of low to
+medium complexity backlog
+items — from refining
+requirements and breaking
+down stories to
+development, testing, and
+deployment.
+
+Projected
+Evolution
+
+Task Length:
+1 week
+
+Task Length:
+4 hours – 2 days
+
+• Vibe-coding as rapid prototyping
+technique
+
+Task Length: 2 min – 1 hour
+
+Experimentation
+is here
+
+Technology
+is here
+
+Market adoption
+is here
+
+Personalized & Self Learning Agents
+Specialized LLMs/SLMs
+Continued LLMs Advancements
+EPAM P roprietary & Confidential.
+
+5
+
+Gigantic Investments into AI Infrastructure
+EXECUTIVE ORDER ON ADVANCING UNITED STATES LEADERSHIP IN ARTIFICIAL INTELLIGENCE INFRASTRUCTURE
+Building AI in the United States requires enormous private-sector investments in infrastructure, especially for the advanced
+computing clusters needed to train AI models
+
+$29+ billion
+
+~$80 billion
+
+Google reported spend on AI in 2024 is 29B.
+
+2024 AI spend was $46B.
+
+The company is continuing to spend big on AI.
+Alphabet's capital expenditures in 2025 would be higher than this year.
+Source
+
+In FY 2025, Microsoft is on track to invest approximately $80 billion to
+build out AI-enabled datacenters to train AI models and deploy AI and
+cloud-based applications around the world
+Source
+
+$19+ billion
+
+$27+ billion
+
+2024 AI spend was $19B.
+
+2024 AI spend was $27B.
+
+AWS plans to invest at least $11 billion in Georgia alone to expand
+infrastructure to support AI and cloud technologies
+
+Meta expect spending will grow in 2025, including a "significant
+acceleration in infrastructure expense growth" to support Meta's AI
+products.
+Source
+
+Source
+
+EPAM P roprietary & Confidential.
+
+6
+
+The “Year of Agents”
+
+AI agents are
+on track to
+reach the top of
+the Gartner
+Hype Cycle in
+2025.
+
+CES 2025 Keynote
+
+Nvidia CEO Jensen Huang stressed
+upon the significance of agentic AI,
+that could eventually revolutionize
+the workforce and provide a major
+boom for those companies who are
+deeply invested into agentic AI
+research and development.
+
+Microsoft CEO Note
+
+Industry is approaching the next stage
+of AI development, with enterprises
+globally focusing heavily on agentic AI
+adoption.
+Microsoft’s focus in the year ahead
+will be on building out its agentic AI
+capabilities
+
+IDC’S 2024 AI OPPORTUNITY STUDY
+Sponsored by Microsoft
+Companies are gravitating to more advanced AI
+solutions.
+In the next 24 months, more companies expect to build
+custom AI solutions tailored directly to industry needs
+and business processes, including custom copilots and
+AI agents.
+
+Google Cloud Blog
+
+We’ve gone from experimentation to
+seeing hundreds of gen AI agents
+come to life in the real world.
+
+Amazon Q Developer:
+Transform
+
+Amazon launches the first generative
+AI–powered assistant for
+transforming .NET, mainframe,
+VMware, and Java workloads
+accelerating large-scale
+transformation of enterprise
+workloads with domain-expert
+generative AI agents
+EPAM P roprietary & Confidential.
+
+7
+
+AI Production Adoption, Strategy Consolidation, and Measurable Outcomes Focus Area
+
+Implementation challenges will stall more than 50% of agentic and AI agent efforts.
+
+Source
+
+How AI Agents Will Disrupt Software Engineering, Sept 24, 2024
+
+IDC Chief Research Officer:
+“
+In 2024 organizations have conducted an average of 37 proofs of
+concept, but only about 5 have moved into production. It’s been
+a year of intense experimentation.
+What will it take to move from experimentation to adoption? The
+key areas are:
+• Enterprise AI strategy
+• Unified governance model
+
+• Managing the technology costs associated with GenAI“
+
+Integrating AI agents throughout a developer’s entire workflow will be immensely
+challenging.
+Recommendations:
+• Enhance developer experience by IMPLEMENTING A PILOT that focuses on one
+phase of the SDLC where developers will work with an AI agent.
+• Integrate AI agents STRATEGICALLY to enhance elements of developer experience.
+PRIORITIZE ADOPTION OF TOOLS that address your developer’s top friction points.
+• MEASURE THE IMPACT OF AI AGENTS on developer productivity and satisfaction
+by defining relevant key performance indicators (KPIs).
+• Conduct regular reviews to measure the business impact of AI agents, and adjust
+your approach for using AI agents based on developer feedback and performance
+data.
+
+EPAM P roprietary & Confidential.
+
+8
+
+AI ENG INEERING FUTURE OUTLOOK
+
+AI Technologies and Trends – September 2025
+
+• New research from Thinking Machines lab claims
+to achieve deterministic LLM outputs.
+
+• Deterministic LLMs would behave more like
+traditional computer programs and their outputs
+would be reproducible..
+
+•
+
+•
+
+Context Engineering = dynamically assembling just-enough
+task framing + relevant retrieved evidence + episodic
+memory + tool specs each turn—an orchestrated upgrade
+from static prompt craft
+It optimizes retrieval, re-ranking, compression and
+long-vs-retrieval trade-offs to stay precise and cost-efficient
+within context windows
+
+Ambient assistance is evolving from simple autocomplete to a
+more powerful interaction mode, where AI suggests edits without
+being explicitly prompted.
+
+•
+
+GitHub Copilot has released Next Edit Suggestions in public
+preview for JetBrains IDEs.
+
+•
+
+Cursor's Tab completion now suggests 21% fewer edits, with a
+28% higher acceptance rate.
+
+Prompt Engineering ->
+Context Engineering
+•
+
+AI Code Assistants Expand Beyond Developer Role &
+Enter the Enterprise
+
+Ambient Assistance: From Autocomplete to Proactive
+Edits
+
+Towards Deterministic LLMs
+
+•
+
+Support of AI Agents in popular in Enterprise IDEs, not only
+VSCode like ones (e.g. Windsurf plugin for IntelliJ)
+
+•
+
+Launch and advancements of Background and Multi-device
+Agents (Cursor) that allow to expand AI impact beyond coding
+use case.
+
+•
+
+Transition from dev centric IDE to a more agent-like platform
+with features for workflow automation and multi-step
+collaboration (Windsurf)
+
+Codebases are becoming AI-first
+
+Companies share AI adoption stories
+
+•
+
+At Booking.com, 65% of developers use AI tools; the industry
+median is 50%.
+
+•
+
+At WorkHuman, AI contributed to an 11% improvement in
+developer experience across the organization.
+
+•
+
+Developers at WorkHuman who regularly used AI showed a 15%
+increase in velocity compared to non-users.
+
+•
+
+The cost of AI-enabled developer tooling can reach several
+hundred dollars per developer per month.
+
+•
+
+Teams are now actively modifying their codebases to make them
+more understandable for AI agents.
+
+•
+
+They focus on maintaining clean service boundaries and define
+explicit interfaces within these boundaries to clarify interactions.
+
+•
+
+Teams now create documentation for both human developers
+and AI agents, with AI-focused docs emphasizing code samples
+and omitting visuals.
+
+EPAM P roprietary & Confidential.
+
+9
+
+MCP Is Trending, Enabling the Shift Toward More Integrated, Context-Aware AI
+Model Context Protocol is a standardized open protocol that simplifies how AI models and agents interact with external data and tools
+
+WHY is it popular?
+• Solves integration problems
+
+M CP C LIEN T HO ST
+
+M CP S ER VE R
+
+• Strong community and rapid,
+widespread adoption
+• Open, model-agnostic, and backed by a
+major AI player
+• Actively improved with ongoing
+developer education
+
+• Brave Search
+• Google Drive
+
+• Claude Desktop
+
+• AWS
+
+• GitHub Copilot
+
+• Slack
+
+• Cursor
+
+• Puppeteer
+
+• SourceGraph Cody
+
+MCP
+
+• GitHub
+
+• Windsurf
+
+• Grafana
+
+• EPAM AI/Run
+
+• PayPal
+
+• …
+
+• Perplexity
+• EPAM AI/Run
+• ..
+
+Awesome MCP Servers: https://mcpservers.org/
+EPAM P roprietary & Confidential.
+
+10
+
+Decoding the Trio: Chats, Copilots and Agents in SDLC Workflows
+Chats
+
+Copilots
+
+Agents
+
+Facilitate communication,
+troubleshooting, and learning
+throughout the SDLC
+
+Focus on helping individual
+developers with coding and technical
+tasks
+
+Manage automated workflows across
+infrastructure and teams, deploy and
+manage the code
+
+Aspect
+
+Chats
+
+Copilots
+
+Agents
+
+Scope
+
+Provide conversational
+assistance
+
+Assist individual developers
+
+Automate workflows & systems
+
+Primary Use
+Case
+
+Problem-solving & collaboration
+
+Code writing & debugging
+
+Workflow orchestration
+
+Interaction
+
+Natural language-based queries
+
+Embedded in coding tools
+
+Autonomous, event-driven
+
+Focus
+
+Knowledge sharing &
+communication
+
+Developer productivity
+
+Process efficiency
+
+Stage in SDLC
+
+Cross-stage use (requirements,
+testing, etc.)
+
+Development phase
+
+All stages of SDLC
+
+Examples
+
+ChatGPT, Bing Chat, Google
+Bard, EPAM DIAL AI
+
+GitHub Copilot, CodeWhisperer, Amazon Q, Cursor, EPAM
+ELITEA, Windsurf (ex.Codeium)
+
+EPAM ELITEA, EPAM CodeMie, Amazon Bedrock, Microsoft
+Copilot Studio, Vertex AI Studio
+
+EPAM P roprietary & Confidential.
+
+11
+
+AI ‘Sabotaging’:
+Numbers Revealed
+
+The Writer 2025
+generative AI survey
+gathers insights and
+experiences from
+1,600 knowledge
+workers, including
+800 C-suite executives
+and 800 employees.
+
+66%
+
+of executives reported increased tension in the organization caused by AI-related initiatives.
+
+55%
+
+of employees were described as “in denial,” “resistant,” “reluctant,” or “indifferent” about
+AI integration.
+
+42%
+
+of executives stated that generative AI is “tearing their company apart.”
+
+41%
+
+of Gen Z employees admitted to resisting or not using AI tools.
+
+31%
+
+of all employees said they are actively resisting or sabotaging their company’s AI efforts.
+
+Source: The Writer 2025 AI Survey
+
+EPAM P roprietary & Confidential.
+
+12
+
+EPAM is Leading
+GenAI-Enabled Engineering
+EPAM is an Emerg ing Leader in Gartner's
+Emerg ing Market Q uadrant for Generative AI
+Consulting and Implementation Ser vices.
+
+EPAM A I/ R u n
+D e vel op e r Ag e nt i s
+l e a d i n g S WE - b en c h
+- i n d u s t r y - s ta n d a r d
+AI Coding
+A s se s s men t
+E v a l u a t i o n To o l s e t
+fo r so f t w a r e
+e nginee ring.
+
+EPAM Enterpri se GenAI Orchestrati on Pl atform
+D IAL i s now on AWS Marketplace
+
+Innovation Guide for Generativ e AI Consulti ng and Implementation Services
+Published: August 14, 2025
+EPAM P roprietary & Confidential.
+
+13
+
+EPAM Al/Run
+A practical approach to modern
+software engineering that
+leverages AI agents across the
+full SDLC to automate processes,
+accelerate quality feedback
+loops, and enable faster time-tomarket while reducing costs.
+
+EPAM P roprietary & Confidential.
+
+14
+
+02
+
+AI Adoption Strategy
+• AI/Run – Enterprise Adoption Framework
+• Phased AI Adoption
+
+EPAM P roprietary & Confidential.
+
+15
+
+AI Adoption: Common Challenges
+Adopting AI can be transformative, but clients often encounter hurdles such as resistance to change, misaligned workflows, an d lack
+of measurable impact.
+
+Integration of AI into
+Existing Toolchains
+
+Organizational Resistance &
+Human Factor
+
+Rapidly Evolving AI Tools and
+Lack of Standardization
+
+AI tools lack integration with common IDEs
+and require additional skills for effective
+use.
+
+People resist change and stick to familiar
+workflows, while limited training fuels AI
+scepticism and isolates enthusiasm.
+
+The evolving AI tools market requires ongoing
+learning and adjustments, while the lack of
+standardized frameworks causes scattered
+efforts and limited team synergy.
+
+Only limited potential of AI
+is realized
+
+Hard to measure AI Impact
+and ROI
+
+Quality Gates
+& Security
+
+Productivity gains aren't scaling to teamlevel performance due to misaligned SDLC
+roles and poorly chosen AI use cases—
+either too complex or too narrow.
+
+Without baseline KPIs, measuring AI
+impact is challenging, and role-based
+productivity metrics fail to reflect team or
+product-level performance.
+
+Quality controls miss AI-generated code issues,
+and data security and privacy remain key
+concerns.
+
+EPAM P roprietary & Confidential.
+
+16
+
+Key Learnings from EPAM Scaled Adoption Engagements
+Pay Attention to Organizational
+Resistance & Human Factors
+
+Prioritize Integrating AI Tools into
+Existing Development Environments
+
+Ensure Teams Baseline and
+Measure AI Impact and ROI
+
+• People resist changing established workflows across all
+roles
+
+• AI tools are not natively integrated into existing
+development environments or ways of working
+
+• Missing baseline KPIs make true AI impact measurement
+difficult
+
+• Cultural inertia plus lack of on demand training creates
+organization-wide skepticism
+
+• Most advanced AI capabilities only available in IDEs
+uncommonly used by enterprise developers
+
+• Poor use case selection: either too complex or too
+narrow for realistic AI capabilities
+
+• Rapidly evolving AI tools may cause cognitive overload
+and adoption fatigue
+
+Avoid Individual Output Over
+Team and Product Performance
+
+Monitor Quality Trends Linked to
+Growing AI Adoption (GitClear)
+
+Monitor Fragmentation of AI Adoption,
+AI Strategy and Focus
+
+• AI increases individual productivity and flow but
+paradoxically decreases time spent on valuable work
+
+• Copy/Paste % is increasing to 12% and first time
+surpassed % of refactored code
+
+• Siloed AI Initiatives challenged to deliver production
+ready applications
+
+• AI is hurting delivery performance: individual
+productivity boost → larger changes → higher instability
+
+• % of duplicated code increased 4 times over 2024, 8
+times comparing with 2020
+
+• High-performing teams and organizations use AI, but
+products don’t seem to benefit
+
+• AI-Driven Code Churn is Growing Rapidly - % of revised
+“1 month old” code increased from 70% to 80% in 2024
+
+• Dedicated AI Lab maturity doesn’t spread beyond it’s
+walls and not enabling entire organization
+transformation
+
+• Lack of holistic focused strategy to address both
+extremes
+
+EPAM P roprietary & Confidential.
+
+17
+
+IN N OVA TI ON CE NT ER
+
+Integrating AI seamlessly into existing systems and processes
+and maintaining high employee engagement and adaptability
+
+AI/Run Playbook
+
+BEHAVIOR
+CHANGE
+
+7 pillars of AI-driven approach
+A comprehensive and mature development
+process to encapsulate the best practices
+and standards for software development
+performance enhanced by AI.
+
+SDLC PROCESS
+[ENGX.AI]
+
+AI ADOPTION
+MEASUREMENT
+
+Reporting on the level of AI Toolset adoption
+and utilization across software development
+teams
+
+ovation Cen
+n
+te
+In
+r
+
+Understanding ongoing ROI from
+AI-driven software Development,
+prioritization of use cases, and
+required tools
+
+GOVERNANCE OF
+BUSINESS VALUE
+AND ROI
+
+AI tools, agents, and platforms are integrated into
+a single ecosystem. It aims to provide AIsupported automated solutions to accelerate and
+automate development.
+
+AI DEVELOPMENT
+ECOSYSTEM
+
+AI EDUCATION
+
+PERFORMANCE
+MEASUREMENT
+
+Combination of formal and
+informal learning to continuously
+upskill employees to use AI
+
+Establish metrics and benchmarks to
+evaluate and improve performance, ensuring
+continuous improvement and alignment with
+strategic goals.
+
+EPAM P roprietary & Confidential.
+
+18
+
+19
+
+Agents Enhance Every Stage of SDLC
+
+Functionality Clarifications
+Test Case Design
+
+Grooming sessions
+
+Manual Tests Execution
+
+Architecture and Implementation planning
+
+Tests Automation
+
+Incoming incidents triage
+
+Tasks decomposition
+
+Tests Results Analysis
+
+Root-cause analysis
+
+Impact Analysis and Test Planning
+
+Tests Coverage Analysis
+
+User’s support request handling
+
+Planning
+
+Testing
+
+Support
+
+15-20%
+
+25-30%
+
+25-30%
+
+Ideation
+
+Coding
+
+Release
+
+10-15%
+
+20-25%
+
+5-10%
+
+Stakeholders Communication
+
+Implementation planning
+
+BA/PO story verification
+
+Draft Requirements and User-Stories
+
+Functionality Clarifications
+
+User Acceptance and Exploratory testing
+
+Feature Development
+
+Performance testing execution and analysis
+
+Unit tests
+
+User Story Demo
+
+Contract tests
+
+Release reporting
+
+Code Review
+
+Legend:
+
+Virtual Developer
+
+Virtual BA
+
+Virtual Team Lead
+
+Virtual Support
+
+Virtual QA
+
+EPAM P roprietary & Confidential.
+
+19
+
+Ready to Use AI-Infused Experiences to Get a Fast Feedback
+User Stories Elaboration
+
+Code Reviewer
+
+• Helps to draft initial user-story using meetings
+transcripts
+
+• Reacts on new merge request created and starts
+review without any delay
+
+• Aids PO in preparing for grooming and
+implementation review sessions
+
+• Comment on areas for improvement according to
+coding standards used in the team
+
+• Speeds-up creation of acceptance criteria for userstories
+
+• Analyze and improve unit test coverage
+
+Tests Analysis & Planning
+• Create a strategy of testing for user-story
+
+• Can be called from IDE before pushing changes
+
+Code to Documentation
+
+Tests Automation Agent
+• Test script in appropriate OOP and TAF.
+• Create required Data for existing test automation
+framework.
+
+• Integrate assistant with Git, Jira other tools
+• Educate assistant on coding standards and
+processes for automated test development
+
+Support Assistant
+
+• Reads code of your repositories, analyses and
+create a graph of dependencies
+
+• Receives support requests through convenience
+channels such as email, team, webchat, etc.
+
+• Creates test cases based on defined format
+
+• Creates technical documentation from code as well
+as user documentation on exposed features
+
+• Answers the request by searching information in
+available data
+
+• Conduct test execution analysis to uplift test
+coverage based on defects
+
+• Provides AI powered code assistant as a side
+product of documentation generation
+
+• Helps users create support requests and track the
+progress
+
+• Collects required information and identify
+requirements gaps
+
+EPAM P roprietary & Confidential.
+
+20
+
+Agentic AI Ecosystem Maturity Capability Model
+Level 1:
+Experimental
+
+Complexity Factors
+
+Channels
+Channels
+Integration
+Integration
+
+• Behavioral shifts across teams
+• Integration channels diversity
+• Role-based customization
+
+Agents
+Agents
+Management
+Management
+
+•
+•
+•
+•
+
+Agent Operating Modes (sync, async, event-driven, etc)
+Observability
+Access Control
+Workflow orchestration
+
+Context
+Context Engine
+Engine
+
+•
+•
+•
+•
+
+Content types and formats variety
+Data pre-processing and normalization
+Search & Rank
+Memory
+
+Evaluations
+Evaluations
+
+• Use-case based testing strategies
+• Evaluation infrastructure
+• Test benchmarks and data sets management
+
+Level 2:
+Operational
+
+Level 3:
+Strategic
+
+Standalone Assistants
+Embedded Assistants
+Unified Experience
+Team-Owned Agents
+Shared Agent Library
+
+Agent Platform
+Static Data
+Dynamic Information
+Semantic Knowledge
+Ad-hoc Quality Checks
+Structured Testing
+Systematic Quality Controls
+Unguided Usage
+
+LLMs
+LLMs
+
+• Multi-Model Complexity
+• Vendor Landscape Evolution
+
+Model Hub
+Intelligent Model Routing
+
+Governance
+Governance &
+Compliance
+& Compliance
+
+• Regulatory Alignment
+• Risk Management (security, ethics)
+• Usage Analytics & FinOps
+
+Ungoverned Adoption
+Manual Controls
+Enterprise Compliance Suite
+
+EPAM P roprietary & Confidential.
+
+21
+
+ST AY IN MOT ION
+
+AI-First Delivery Teams
+Approach Highlights
+
+Operating Model at a Glance
+
+• Day-1 AI Fluency
+
+• Full-SDLC AI Stack
+
+Every role is certified and 100% ai-adoption rate in sprint #0
+
+Reqs -> IDE → CI/CD → QA AI agents/assistants recommended by EPAM AI/Run CoE experts
+
+• Curate Best-fit Agentic Toolchain
+
+• Productivity Growing Targets
+
+EPAM AI Run/CoE-backed selection of SOTA agents and copilots, refreshed monthly
+
+↑Throughput, ↑DORA deployment-frequency, ↓MTTR, ↑Defect-containment
+
+• AI-Optimized Work Units
+
+• Value-Stream Control Tower
+
+Optimized solution structure and role-based input tasks format calibrated for minimal human re-work
+
+• Guard-railed Quality Gates
+
+Deliver pipeline optimization, agent vs human mix
+
+• Transparent Metrics Discipline
+
+AI output passes automated security and quality gates + human sign-off before merge
+
+Dashboards, agent audit trail, ROI tracker
+
+• Reinforcing Improvements
+Telemetry-driven agent tuning every sprint & templatization for max AI automation
+
+AI Value Stream
+
+AI Native Pool
+
+Engineering AI Tools Center of Excellence
+
+Project Starter Kit
+- Agentic Workflows
+
+- Curated MCP Servers
+
+- Rules Files
+
+- Telemetry Dashboards
+
+AI Optimized Work
+Units
+
+Humans, Agents &
+Workflows
+
+AI Output Quality
+Gates
+
+EPAM P roprietary & Confidential.
+
+22
+
+IN N OVA TI ON CE NT ER : PROCE SSES
+
+Build Business Case for AI SLDC Investment, Benefits, and ROI Calculator
+One of the primary functions of the Center of Excellence is to define KPIs and develop business cases based on thorough analysis and comprehensive
+discovery.
+
+ROI in 10 Months
+
+Savings from 3rd month
+
+Anticipated total boost of
+efficiency about 20%
+
+Swift tangible results
+
+Calculation
+Baseline
+Team Composition
+•
+•
+
+Accumulated cost vs accumulated savings, FTE
+
+Monthly based costs vs savings, FTE
+
+5 functional QA
+5 test automation
+
+Selected AI use cases
+•
+•
+
+20
+
+5
+
+15
+
+4
+
+Test case authoring
+Test automation code
+authoring and scripts
+maintenance
+
+3
+
+Investments Details
+
+2
+
+•
+•
+•
+
+10
+
+5
+
+1
+
+0
+
+0
+m1 m2 m3 m4 m5 m6 m7 m8 m9 m10 m11 m12
+
+Cost of investment, FTE
+
+Return, FTE
+
+m1 m2 m3 m4 m5 m6 m7 m8 m9 m10 m11 m12
+Cost of investment, FTE
+
+3 months
+3 FTE for AI enablement
+2 FTE part-time from
+the project team as
+early adopters (Alpha
+group)
+
+Savings, FTE
+
+Sample: ROI Calculation for AI Adoption
+
+EPAM P roprietary & Confidential.
+
+23
+
+IN N OVA TI ON CE NT ER : T ECH NOL OGY
+
+AI Development Ecosystem with AI Run
+Messengers
+
+Developer Toolset
+
+Role-based channels extended with custom
+agents and workflows to accelerate day-to-day
+tasks
+
+Tasks Tracking
+
+AI Run Platform
+Agents Fleets
+
+Library of agents and workflows for highly
+contextualized custom agents and workflows
+
+Custom agents runtime supporting build, test
+and execute phases
+
+Business Analysis
+
+Testing
+
+DevOps
+
+Support
+
+Runtime
+
+Enterprise Enablement
+
+Integrations
+
+Workloads
+
+Hosting & Execution
+
+Security
+
+Data sources
+
+Agents
+
+Discovery
+
+Auditability
+
+Tools
+
+Workflows
+
+Orchestration
+
+Observability
+
+Curated high-quality content with removed
+noise and gaps as pre-requirement for quality
+output
+
+Models and data connectors for integrating
+and extending project toolset
+
+Development
+
+Curated High Quality Context
+
+LLM providers
+
+Data providers
+
+EPAM P roprietary & Confidential.
+
+24
+
+IN N OVA TI ON CE NT ER : T ECH NOL OGY
+
+Examples of Agents
+Draft Requirements Agent
+
+Test Case Agent
+
+Unit Tests Agent
+
+Test Case Automation Agent
+
+Scope:
+
+Scope:
+
+Scope:
+
+Scope:
+
+•
+
+Draft user stories in Rally
+
+•
+
+•
+
+Standardize stories format
+
+•
+
+Enable Dev/QA to get an
+answer from BA/PO faster by
+querying
+documentation/codebase
+
+Support automated testing
+engineers with generation of
+code for new automated
+tests using AI
+
+•
+
+•
+
+Augment test case
+generation process with AI
+agent, to increase efficiency
+of test case generation
+
+Minimise time required on
+Increasing Unit Tests
+Coverage in new and legacy
+code
+
+•
+
+Minimize operational
+overhead of working within
+multiple tools (Rally, QTest)
+by enabling chat interface to
+create TCs
+
+•
+
+Aid engineers with supporting
+assistant for updating existing
+test
+
+•
+
+Avoid bugs when changing
+the code
+
+Solution Highlight:
+•
+
+Load context from Rally,
+Confluence, SharePoint
+
+•
+
+Get a Teams call transcript and
+create a summary
+
+•
+
+Suggest epics/features/stories
+list based on the summary
+
+•
+
+Create Rally stories for the
+approved items
+
+Solution Highlight:
+•
+
+Integrate assistant with Rally
+and QTest
+
+•
+
+Integrate assistant with
+Confluence as additional data
+source
+
+•
+
+Tune assistant on expected
+Test case format and all
+required fields in Rally / Qtest
+to support traceability
+between requirements and
+test cases
+
+Solution Highlight:
+Solution Highlight:
+•
+
+Create required Data sets /
+Class Diagrams for existing
+test automation
+framework(s)
+
+•
+
+Integrate assistant with
+GitHub, Rally and QTest
+
+•
+
+Tune assistant on coding
+standards and process for
+automated tests
+development
+
+•
+
+Provide access to assistant
+through IDE
+
+•
+
+Adjust the agent for project
+specific codebase
+
+•
+
+Generate Missing Unit Tests
+
+•
+
+Offer quality gates that reject
+generated tests failing to
+enhance code coverage or
+adhere to the defined
+standards of well-written unit
+tests.
+
+•
+
+The tool is integrated into the
+CI/CD pipeline to become
+part of the development
+lifecycle.
+
+EPAM P roprietary & Confidential.
+
+25
+
+E PA M A I/ RUN
+
+Team Level AI Maturity Model
+Outcomes for Team
+
+Required Org Capabilities
+
+Outcomes for Organization
+
+L3 AI-Native Team
+• Enterprise AI Ecosystem with Self-Service
+Agent Factory
+• Cross-roles/T-shape training and upskilling
+(Manual QA to BA, or Front-End Developer
+to Full Stack, etc.)
+
+KPIs
+• Time-to-Market
+
+• Next-generation innovative PDLC, culture
+rituals, ideation, and feedback loops
+processes
+• AI automates most of the repeatable and low
+complexity workflows
+
+• Innovative AI-Native PDLC
+• Federated agent marketplace
+• Next-generation talent development
+framework
+• Enterprise AI Ecosystem with selfoptimizing PDLC
+
+• AI Agents are set up for all team members
+and automate routine workflows
+• Most of the day-to-day output of team
+members is produced together with AI
+• AI adoption and performance impact are
+measured and used to drive adoption
+
+• Community of AI Champions
+• Enterprise library of prompts, agents,
+workflows, and MCP servers for
+standardization and reusability
+• Library of case studies for ROI
+calculation
+
+• Teams are enabled to use AI Tools to support
+day-to-day activities
+• Adoption of AI tools is measured
+
+• Feedback on tools
+• Feedback on training
+• Early adopters to become AI
+Champions
+
+L2 AI-Enabled Team
+• AI Agent Platform with shareable artifacts
+and agents created on request
+• Rewards and recognition system
+• Performance measurement dashboards
+
+KPIs
+• Must: Individual
+Performance
+• Should: Team
+Performance
+
+L1 AI-Engaged Team
+•
+•
+•
+•
+
+Licenses for Market AI Tools
+AI Literacy trainings
+AI Tools usage guides
+AI Adoption dashboards
+
+KPIs
+• Engagement Rate
+• Acceptance Rate
+
+EPAM P roprietary & Confidential.
+
+26
+
+AGE NT IC PROJE CT TE AM S
+
+New Ways of Working:
+AI Native Development
+
+m
+
+e
+pl
+
+me
+
+t
+nta
+
+Data Sources,
+Format, DoD
+
+sig
+
+n
+
+Plan/Scaffold HOW it should
+be done
+
+De
+
+ra
+
+Test Cases,
+Gherkin Format,
+Test Data source
+
+nc
+
+IDE Dev
+Agent
+
+Background
+Dev Agent
+
+QA
+Agents Fleet
+
+SA
+Agent
+
+DevOps
+Agents Fleet
+
+Recipes,
+Runbooks,
+Terraform Format
+
+Developers /
+T-Shaped
+
+t
+
+Solution
+
+su
+
+QE /
+T-Shaped
+
+ymen
+
+Sketch WHAT should
+be done
+
+As
+
+plo
+
+CLI Codi ng
+Agent
+
+ty
+
+De
+
+Tech Lead
+
+Quali
+
+ion
+
+e
+
+I
+
+Developers /
+T-Shaped
+
+Project Mgmt
+Agents Fleet
+
+Data sources,
+Story Format,
+Context, DoR
+
+Shared Agents Fleet
+
+Release
+Format, Target
+Environment
+
+e
+
+qu
+
+e
+R
+
+Product Owner
+
+Agentic Semantic
+Knowledge Layer
+(Context Engineering)
+
+as
+
+ir
+
+em
+
+BA
+Agents Fleet
+
+Rel
+e
+
+s
+ent
+
+T-Shaped
+Engineer
+
+Scrum Lead
+
+EPAM P roprietary & Confidential.
+
+27
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Four-Dimensional AI Adoption Measurements Approach
+
+Requirements
+Gathering
+
+Design & Planning
+
+Implementation & Testing
+
+Deployment & Maintenance
+
+Lead Time
+Value
+Stream
+Performance
+
+Role-Based
+Individual Performance
+
+AI Adoption
+
+Engagement
+
+Requirement Preparation Time
+
+Deployment Time
+
+Cycle Time
+Testing Time
+
+Development Time
+
+Business Analysis
+
+Developers
+
+Automation and Manual QA
+
+•
+•
+•
+•
+•
+
+•
+•
+•
+•
+•
+•
+
+•
+•
+•
+•
+•
+•
+
+# of Stories Created
+Time for Sprint Backlog definition
+Quality Of Sprint Backlog
+Time for Onboarding Material and Glossary Creation
+Time for Personas Creation and Definition
+
+Velocity
+Average Code Review Time
+Code Review Failure Rate
+Unit Test Coverage
+Technical Debt
+Average Rework Time per Defect
+
+Adoption Stats
+
+Engagement Score
+
+•
+•
+•
+•
+•
+•
+
+•
+•
+•
+•
+•
+•
+
+Engagement Rate
+Usage Rate
+# of Inactive Users Last X Days
+Prompts Acceptance Rate
+Lines of Code Generated
+% of Chat Users
+
+Test Development Velocity
+Test Coverage
+Test Automation Effort
+Test Effectiveness
+Test Result Analysis Effort
+Defect Leakage
+
+Self-Proficiency Rate
+Performance Rate
+Disruption Rate
+Time Savings
+AI Relevance Score
+AI Adaptation Effort
+
+EPAM P roprietary & Confidential.
+
+29
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Monitoring and Reporting Methodologies
+Team Performance
+
+• Leverage existing productivity and DevOps dashboards (Jira, Azure DevOps, GitHub Insights).
+
+Team performance
+in delivering product
+features is changing positively.
+
+• Regular aggregated team performance review meetings or status reports to assess and adjust
+adoption impact.
+
+Individual Performance
+
+• Track and report time spent on story/test case creation via integrated tools like Jira, GitHub
+or productivity tracking tools.
+
+Individual performance
+to create output is
+changing positively.
+
+AI Adoption
+The output of individuals
+is changed, and AI plays a
+significant role in creating it.
+
+Engagement
+Individuals regularly
+interact with the AI Tools
+in a meaningful way.
+
+• Measure flow metrics specifically focusing on time spent in certain activities in SDLC
+
+• Monitor adoption through continuous logging of AI-generated outputs (# of stories, test cases).
+• Use automated reporting for frequency of AI-driven activities and interactions.
+• Analyze and report time savings achieved through AI usage per identified use case.
+
+• Setup AI Adoption interactive dashboards for weekly tracking of engagement trends, usage
+and tool interaction (tokens generated, frequency of tool usage per individual)
+• Periodic surveys to measure user satisfaction and engagement quality.
+• Detailed breakdowns of usage rates segmented by user roles and solutioning areas.
+EPAM P roprietary & Confidential.
+
+30
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Monitoring of key metrics per project and team to provide all necessary information to drive
+improvements process and measure outcomes
+Work Management
+
+Metrics Data Model
+Work Management
+
+Are we on track?
+
+Azure Boards
+
+Source Code Mgmt.
+Code Quality
+
+Code Quality
+CI / CD
+
+How reliable are team
+commitments?
+
+Metric Calculators
+(120+ OOTB)
+Source Code Management
+
+Load data
+
+Delivery Forecast
+
+How efficient is the
+testing?
+
+Defect Leakage
+
+Quality Debt
+Build & Pipeline
+Commitment Rate
+
+How good we are about
+planning?
+
+Feature Lead Time
+Custom Connectors
+
+Pipeline Red Time
+
+and so on
+via TelescopeAI Professional Services
+
+…..
+
+EPAM P roprietary & Confidential.
+
+31
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+AI Adoption Engagement
+Clients’ feedback quotes:
+“It has become working much faster.”
+“Helpful in generating new ideas. Good tool
+for newly onboarded BA – useful to start
+smoothly on the project.”
+“Great starting point, especially for the
+onboarders or junior BAs”
+
+“I plan to use it on full strength for the work
+on next Epic”
+“Helps to save time for creation and
+modification of the User Stories.”
+
+EPAM P roprietary & Confidential.
+
+32
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Continuous Improvement Process
+Team Performance
+
+Individual Performance
+
+AI Adoption
+
+Engagement
+
+• Implement regular retrospectives (weekly/monthly) to analyze team-level data, identify bottlenecks, and
+recommend improvements. Ion ways of working.
+• Foster peer-to-peer knowledge sharing sessions and internal showcases of successful AI
+• Recognize and incentivize teams demonstrating high performance improvements to sustain momentum and
+encourage continuous engagement with AI tools.
+• Conduct regular retrospectives (daily/weekly) to address individual productivity blockers, incorporate
+suggestions for agent improvement and use case elaboration
+• Regular one-on-one coaching sessions to optimize individual productivity leveraging AI tools.
+• Encourage individuals to share personal productivity improvements and best practices during regular AI
+Office Hours, fostering a community of continuous learning.
+•
+•
+•
+•
+
+Implement incremental improvement cycles, refine agent configurations, and promptly apply updates.
+Promote internal showcases and case studies highlighting successful AI-driven adoptions across teams.
+Regular tuning of AI agent capabilities with champions based on user feedback and metric insights.
+Provide targeted support sessions and interventions for individuals or teams facing adoption challenges.
+
+• Establish a continuous feedback loop by regularly collecting user insights to identify barriers to sustained
+engagement.
+• Address challenges and identify opportunities for improved interaction.
+• Regular user workshops and coaching sessions focused on improving tool proficiency and maximizing engagement.
+• Regularly refresh and communicate new AI use cases and success stories to maintain ongoing user interest and
+motivation.
+EPAM P roprietary & Confidential.
+
+33
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+AI Education and Engagement
+
+Formal Learning
+
+EPAM offers a comprehensive industry-recognized AI
+Education and engagement program to ensure that every
+employee continuously has sufficient skills to use GenAI
+daily while understanding the associated risks and
+limitations.
+
+AI Literacy Courses are focused on building foundational skills and understanding of GenAI across all
+employees:
+• Generative AI Fundamentals
+
+• Prompt Engineering Fundamentals
+Role-based AI Education is focused on providing every person with the knowledge and skillset
+required to execute role-specific day-to-day activities using the GenAI toolset to boost productivity:
+• AI-Assisted Software Engineering
+• AI-Assisted Quality Engineering and Test Automation
+• AI-Assisted System Engineering
+• AI-Assisted Product Management
+
+Informal Learning & Engagement
+Social Learning allows us to engage all employees in the promotion of AI-related knowledge and
+skills:
+• The AI Ambassador Program aims to continuously empower active individuals to share AI-related
+knowledge on a scale from a team to an organization.
+• AI Games event brings the attention of all employees to the importance of AI-related knowledge
+and provides a space to learn and experiment.
+• EPAM LEAP platform provides a single-entry space for all knowledge related to the existing AI
+toolset, and its influence on SDLC, and provides a safe space to experiment.
+EPAM P roprietary & Confidential.
+
+34
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Role-Specific AI Educational Offerings
+Self-paced E-learning materials focusing on the application of AI skills within specific job functions and roles. All courses ar e based on EPAM’s high-quality internal
+training materials.
+
+Sample Role-based Courses
+Audience: Software Engineers
+
+Audience: Business Analysts, Systems Analysts, Product Owners
+
+AI-Assisted Business
+Analysis
+
+Objective: Equip business analysts and related professionals to leverage AIdriven solutions throughout the Software Development Life Cycle (SDLC).
+The course provides a detailed exploration of applying conversational AI to
+enhance business analysis practices.
+
+AI-Assisted
+Engineering
+
+Objective: Equip engineers with knowledge and techniques to work with LLMs
+and seamlessly integrate them into their development practices. The course
+explores practical use cases that can accelerate delivery and improve
+performance.
+Audience: Systems Engineers
+
+Audience: Testing Engineers
+
+AI-Assisted Quality
+Assurance
+
+Objective: Equip testing engineers with knowledge and techniques to
+incorporate LLM usage into existing software testing processes. The course
+focuses on optimizing everyday testing tasks with conversational AI tools.
+
+AI-Assisted Systems
+Engineering
+
+Objective: Equip systems engineers to select and apply conversational AI
+techniques across a broad range of systems development processes. The
+course presents a wide variety of use cases and best practices.
+Audience: Designers
+
+Audience: Test Automation Engineers
+
+AI-Assisted Test
+Automation
+
+Objective: Equip test automation engineers to incorporate LLMs into new
+and existing test automation frameworks. The course focuses on practical
+techniques and best practices to empower and improve test automation.
+
+AI-Assisted UX
+Design
+
+Audience: Product Managers and related roles
+
+AI-Powered Product
+Management
+
+Objective: Equip product managers to support, evaluate, and apply
+generative AI solutions appropriately. The course covers a range of AI
+concepts and techniques tailored for effective product management.
+
+Objective: Equip UX designers to create intuitive and user-friendly designs
+leveraging conversational AI. This course covers the application of AI in various
+stages of UX design, including user research, prototyping, usability testing, and
+interface design.
+
+Audience: Project Managers, Delivery Managers, Team Leads
+
+Prompt Engineering
+for Managers
+
+Objective: Equip managers with delivery-focused AI use cases and practical
+insights for improving processes, decision-making, and innovation with AI. The
+course also focuses on ethical and responsible AI implementation.
+
+EPAM P roprietary & Confidential.
+
+36
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Hands-on AI Coaching
+Successful adoption of Generative AI across
+employees requires careful and well-thought
+coaching to prevent and overcome initial
+hesitation and frustration. Our combined
+approach includes coach-driven trainings and
+workshops with regular in-flight hands-on
+activities.
+
+AI Learning Journey
+High-quality learning materials to provide
+initial knowledge about Generative AI and its
+applicability for software development
+related tasks.
+
+AI Workshops
+Hands-on workshops driven by coaches to
+show how Generative AI can be applied to
+specific software development activities on
+the project.
+
+AI Related Activities During Regular PI
+
+Week 1
+
+Week 2
+
+Sprint 1
+
+Week 3
+
+Week 4
+
+Sprint 2
+
+Week 5
+
+Week 6
+
+Sprint 3
+
+Week 7
+
+Week 8
+
+Sprint 4
+
+Week 9
+
+Week 10
+
+Week 11
+
+Sprint 5
+
+Week 12
+
+Sprint 6
+
+On demand ongoing hands-on Q&A and “pair-programming” sessions
+
+Weekly AI Coffee Breaks – guilty-free informal space for participants to share experiences
+with Generative AI and opportunity to learn from each other's successes and failures.
+
+Bi-weekly AI Retrospectives – more formal session to highlight the
+productivity improvements, adoption success and failures. Review AI Adoption
+impact on various aspects of SDLC and possible process improvements.
+
+Monthly AI Day – a chance to focus whole day on learning new ways Generative AI can
+be applied to usual tasks, get support from coaches and report findings.
+
+EPAM P roprietary & Confidential.
+
+37
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+AI Champions
+Drive AI Initiates
+
+Foster AI Culture
+
+• Scope:
+
+• Scaling:
+
+• advocate for best practices
+
+• encouraging cross-team
+collaboration
+
+• promote knowledge sharing
+• ensure AI is naturally embedded
+into day-to-day activities and
+operations.
+
+• cultivating innovative thinking
+• promoting continuous learning
+• developing efficient processes
+
+• Profile:
+
+Responsibilities
+
+Benefits
+
+• target already engaged senior
+engineers and managers
+
+• acting as knowledge hubs
+
+• hands-on practitioners
+
+• sharing experiences
+• promoting best practices
+
+• individuals with motivation to
+experiment and drive change
+• those ready to educate and
+influence their peers
+
+• Professional Development:
+• upskilling themselves & others
+
+• contributing to professional growth
+
+• Time Commitment:.
+
+• building & refining AI skills
+• enhancing career prospects
+
+• majority of the time should be
+integrated seamlessly with daily
+responsibilities
+• allocate several hours a week for AI
+research and experimentation
+
+• Knowledge Hub:
+
+Use Cases, Tips & Tricks, Tools, Processes, Knowledge Base,
+Professional Development, Scale
+
+EPAM P roprietary & Confidential.
+
+38
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Maximizing AI Adoption in Enterprises
+Through Effective Organizational
+Change Management
+Governance ensures responsible and ethical AI use
+within the organization. It sets clear AI policies,
+guidelines, and standards, defines roles, manages
+data privacy, and ensures accountability and
+transparency.
+
+TR ACKI N G
+&
+MON IT ORI N G
+AI
+C O M M IT TEE
+
+AI
+C HAMPIONS
+
+GOVERN AN CE&
+M O NI TO R IN G
+
+• Ensures accountability and transparency
+• Includes reporting and stakeholder meetings
+• Ensures AI usage transparency
+• Manages risks and legal compliance
+
+ENG AGEMENT
+SYS TEM
+
+• Aligns AI with organizational goals
+• Builds trust and ensures AI initiative
+sustainability
+
+COMMU NI TY &
+KNOWLEDGE
+S HARI NG
+
+AI
+COMMUNITY
+
+AI
+RE S IS T A NC E
+WOR KSHOPS
+RE COG NI T ION
+
+KNOWLEG DE
+S HA R IN G
+
+EPAM P roprietary & Confidential.
+
+39
+
+IN N OVA TI ON CE NT ER : PEOPL E
+
+Value We Bring to our Clients
+I N CR E AS E D PR O DU C T IV IT Y
+
+I N CR E AS E D PR O DU C T IV IT Y
+
+CO ST SA V I N G S
+
+US E-COM MERC E C OMPANY
+
+MULTI-BRAND RETAILER
+
+Implemented end-to-end AI-driven
+automation for unit test generation,
+increasing test coverage from 16% to 46%
+in a single run.
+
+The Elitea solution enhanced BA and QA
+productivity, achieving a 62% boost in user
+story development and a 53% increase in test
+case generation and automation efficiency.
+
+The EPAM GenAI consulting team established
+foundational GenAI capabilities and an impact
+measurement framework, delivering $1.1M
+ROI and a 10% boost in team velocity.
+
+Unit Testing Automation AI Run Agents
+
+Acceleration with AI Run Agents
+
+Engineering AI Adoption
+
+I N CR E AS E D PR O DU C T IV IT Y
+
+CO ST SA VI N G S
+
+W OR K L OA D R ED U CT I O N
+
+IN T ER N ET OF T HIN G S COMP ANY
+
+INSURANCE PAYMENT PROVIDER
+
+H EALT H T E CH N O LO GY CO MPAN Y
+
+Observed a 15–35% faster delivery of
+automated test cases due to AI-powered
+accelerations.
+
+Implemented agentic workflow on EPAM
+CodeMie platform to analyze 100 app
+instances, enabling migration planning and
+achieving $74.5K savings within 3-5 months.
+
+Enabled GenAI-driven modernization of legacy
+platforms, including code exploration, reverse
+engineering, migrations, and enhanced unit
+and automated test coverage.
+
+Managed Services
+
+Projects Delivery with AI Run Agents
+
+Modernization with AI Run Agents
+
+EPAM P roprietary & Confidential.
+
+40
+
+AI Adoption Timeline
+• Typical AI Adoption Timeline
+• Phased AI Adoption Process
+
+EPAM P roprietary & Confidential.
+
+41
+
+AI ADOPTION TI ME LI NE
+
+Typical AI Adoption Timeline
+Phase I: Crawl
+
+Phase II : Walk
+
+Phase III: Run
+
+CR E A T E A MO ME NT UM
+
+E N A BL E T O S U C C EE D
+
+D R IV E Y O U R O W N E X C E L L E N C E
+
+0 - 6 m o n th s
+
+6-12 mont hs
+
+1 2-2 4 mont hs
+
+Design the future state and prepare it for
+future Continuous Improvement
+• Discover existing operating model, technical
+capabilities, and engineering practices
+• Establish Prioritized CoE(s) to support IT
+organization objectives
+
+• Formalize Platform Engineering Function
+• Build prioritized Platform Technical Capabilities
+
+Enable Client to transform while carefully
+building the required capabilities
+• Formalize enablement function
+
+• Adopt Continuous Improvement Program for
+selected teams
+• Continue improvement of CoE(s) and the
+Platform Technical Capabilities to support
+organization objectives
+
+Hand over the steering wheel to Client to
+sustain changes and continuously improve
+
+• Mass rollout adoption of target IT Operating
+Model for the rest of the organization
+• Embrace and Support Continuous Improvement
+Culture with Client
+
+• Reallocate resources to move Client ownership
+of the Foundation Platform
+
+• Pilot Adoption for 1-2 selected teams of
+prioritized Platform Technical Capabilities
+
+Involvement/Expertise
+
+Client ownership
+
+EPAM P roprietary & Confidential.
+
+42
+
+Getting Ready for Crawl Phase: Pilot Approach
+AI Adoption Program Objectives
+
+Crawl Phase Readiness
+
+AI Adoption Workshop: The Pilot
+
+Outline AI Use Cases
+
+Define AI Ecosystem
+
+Identify Trainings
+
+Establish Governance
+
+Select Pilot Teams
+
+APPROACH:
+
+APPROACH:
+
+APPROACH:
+
+APPROACH:
+
+CRITERIA:
+
+-
+
+Review value stream
+
+-
+
+Define key success metrics
+
+-
+
+Gauge current level of AI literacy
+
+-
+
+Outline reward strategies
+
+-
+
+Healthy delivery process
+
+-
+
+Identify top time-consuming
+activities
+
+-
+
+Select AI tools
+
+-
+
+Assess existing AI training
+
+-
+
+-
+
+Metrics baseline available
+
+-
+
+Define AI adoption roles
+
+-
+
+identify additional upskilling needs
+
+Identify involved AI change
+personas
+
+-
+
+-
+
+Outline repetitive tasks
+
+-
+
+Representative backlog of what
+to expect at scale
+
+-
+
+Catch easy to automate tasks
+
+Develop a communication and
+change plan
+
+-
+
+No near-term delivery pressure
+
+-
+
+Named candidates for AI
+champions
+
+-
+
+Evaluate the need for Centers of
+Excellence
+
+EPAM P roprietary & Confidential.
+
+43
+
+03
+
+EPAM’s Expertise & Experience
+in End-to-End SDLC Capabilities
+
+EPAM P roprietary & Confidential.
+
+44
+
+AI Run - Collaboration Platform for Teams
+
+USER INTERFACE AND EXPERIENCE
+
+AGENTS AND PIPELINES
+
+AI ASSETS MANAGEMENT
+
+PROJECTS AND USERS
+
+AI MODELS GOVERNANCE
+
+Integrate AI Agents and pipelines into common
+interfaces, such as chat, emails, IDEs or even to
+your websites to support your clients or users
+
+Automate workflows using AI Agents and Pipelines
+to get the most out of selected use-cases
+
+Every user and teams create, update, version, test
+prompts and data sources to easily experiment and
+collaborate
+
+User and team management with advanced RBAC
+and data level isolation to work in secured way
+
+Connect AI model provider of your choice or use
+privately hosted models to unify and simplify
+access
+EPAM P roprietary & Confidential.
+
+45
+
+Prompts and Data Sources
+
+Space designed to create prompts, data
+sources, collections and organize them.
+Create, Modify, and Save Prompts: Users can now create, modify, and
+save their prompts in a dedicated space, streamlining the prompt
+management process.
+
+Import Prompts: Seamlessly import prompts from EPAM AI DIAL, the
+previous version of EliteA , ensuring continuity and ease of transition.
+Version Control: Maintain various versions of prompts in one place, with
+the capability to effortlessly switch between them.
+
+Execution Options: Execute prompts using Chat or Completion options,
+allowing users to gather and save the output (results) efficiently.
+Publish and Share Prompts: Publish your prompts and share them with
+your project and network, fostering collaboration and knowledge
+sharing.
+Engage with Published Prompts: Use published prompts and
+collections, with options to like them and mark them as favorites,
+enhancing community engagement.
+Organize with Collections and Tags: Group your prompts into
+Collections and categorize them with Tags for better organization and
+accessibility.
+
+Advanced Search Functionality: Enhanced search functionality to
+quickly find your prompts or public prompts and collections with various
+parameters.
+Data Source Configuration: Set up various data sources and configure
+them to enhance your results and the possibilities in using Generative AI.
+Embedding Creation: Users can create Embeddings, adding a layer of
+sophistication to prompt management.
+Similarity Search and Deduplication: Perform similarity searches and
+deduplicate content, ensuring the uniqueness and relevance of prompts.
+EPAM P roprietary & Confidential.
+
+46
+
+Conversations
+
+AI/Run - EliteA Chat is an ultimate
+feature, allowing you to combine all
+EliteA features in one place and
+achieve the best output and results.
+Conversations support the following
+functionality:
+Public and Private Conversations: Share your
+conversation with other users from your project,
+involve them in the same conversation, or keep it
+private and visible only to you.
+Participants: Add various participants to the
+conversation, including other users in public
+conversations, prompts, data sources, agents, and
+language models, making them part of the
+conversation.
+Interactions: Interact with added participants, copy
+generated responses, and more.
+Managing Conversations: Save conversations, pin the
+most important ones at the top of the screen, make
+private conversations public, delete conversations,
+clean the content of the conversation, and export the
+context of the conversation.
+Playback: During playback, you can move backward
+and forward through the playback process or stop the
+conversation by simulating the current conversation
+without any engagement with models.
+EPAM P roprietary & Confidential.
+
+47
+
+EPAM AI/Run Agent Ranked in the Top 7 on SWE-Bench Verified
+Key Achievement
+• EPAM AI/Run Developer Agent scored 55.4% on SWEBench Utilizing Anthropic Claude 3.5 Sonnet
+• Secured a top 7 position in a highly competitive field
+• Outperforming major tech giants like Amazon and
+Google
+• Performance at State-of-the-Art (SOTA) level
+• Demonstrates EPAM's competitive edge in AI Agents
+development
+
+EPAM AI/Run CodeMie:
+• 1 alternatives for issue fix
+• 1 SWE Bench run costs ~$600-700
+CodeStory/devlo/Emergent:
+• 3 alternatives for issue fix (they try to choose the best
+option with higher scoring)
+• 3 SWE Bench run costs ~3x higher than EPAM AI/Run
+(due to 3 alternatives and additional comparison)
+Gru/Blackbox AI Agent:
+
+• 1 alternatives for issue fix with own tooling
+• 1 SWE Bench run costs ~2-3x higher than EPAM AI/Run
+
+EPAM P roprietary & Confidential.
+
+48
+
+AGE NT IC PROJE CT TE AM S
+
+AI/Run Success Stories
+LE A DIN G F IN A NC IA L &
+A N A LY TIC S COM PA N Y
+
+ME DIC A L T EC H & H EA LT H CA R E
+S OLU TION S PR OVI DER
+
+LE A DIN G DU TC H M A IL A N D
+EC OMM ERC E C OMP A NY
+
+Large Scale AI Adoption
+
+Scaled Agentic SDLC
+
+Agents Modernize Legacy
+
+AI Native Delivery Transformation
+
+Implementing
+the AI/Run framework
+to scale AI code assistant
+adoption across 90+
+development teams.
+
+GenAI Evaluation and
+Adoption Program across 80
+engineer teams and 400+
+engineers leveraging AI code
+assistants and custom
+agents.
+
+Enabled GenAI-driven
+modernization of legacy
+platform, including code
+exploration, reverse
+engineering, migrations, and
+enhanced unit and
+automated test coverage.
+
+Scaled AI adoption program
+across 10+ teams:
+integrating 20+ AI-powered
+agents to automate key
+development tasks and
+expedite time-to-value.
+
+10% teams’ velocity improvement
+
+↓ 30% dev cycle time
+
+↓60% migration time
+
+30-50% faster release cycles
+
+X2 accepted pull requests
+
+$1.7M ROI in 1 year
+
+4X migration effort optimization
+
+30-50% less defects
+
+↓80% planning effort
+
+60%-80% time optimization
+
+50 mins saved daily
+
+on routine tasks
+
+100% dependency coverage
+EPAM P roprietary & Confidential.
+
+49
+
+04
+
+Lessons Learned from Large-Scale
+Client Adoptions
+
+EPAM P roprietary & Confidential.
+
+51
+
+AI Adoption in CTC
+From initial failure to organization-wide AI adoption with measurable impact
+
+EPAM P roprietary & Confidential.
+
+52
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+The CTC Gen AI Adoption – The Ask
+“CTC’s goal was to intentionally introduce AI into the
+Software Development Lifecycle for Digital to drive
+Stability, Quality, Speed, and Cost Savings while at the
+same time maniacally measuring impact to People,
+Process, Technology, and managing disruption to Value
+Driver initiatives!”.
+In January 2023, CTC reached out to gain EPAM’s
+assistance with AI Adoption. CTC was not ready to
+commit internal people as AI Champions or setup
+baseline metrics. They wanted to implement the AI tools
+and just try them out.
+
+CTC’s AI Goal
+Statement
+
+Predictable results, measured
+through connected tools
+
+Predictability
+
+Product Vision
+
+Enablement
+
+Consistent process reinforced
+through tools, documentation
+& automation
+
+Methodology that
+helps us work
+across our value
+stream
+
+EPAM P roprietary & Confidential.
+
+53
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+The CTC Gen AI Adoption – The PoC
+PoC Phase
+
+Nov 2023 –May 2024
+• 4 Use Cases selected
+• Generation of user stories based on
+requirements
+• Generation of test cases from user stories
+• Suggestions on BDD implementation
+• Deduplication of tests cases
+• AI Tools - EliteA and AI Jeannie
+• Initiated Jump Start for 4 Teams
+• Drafted AI Center of Excellence
+• No Baseline, No AI Champions
+• Limited Training or Education on AI and AI Tools
+
+The PoC was not effective or scalable due to:
+
+UN STR UC TUR ED AD O PTI O N PRO C ES S
+Lack of framework for integrating AI tools into existing
+workflows led to lack of visibility, decreased adoption rates and
+missed opportunities
+LIMITE D ENGAGEMEN T IN AI ADOPTION
+Low participation rates in AI-related activities and training
+sessions hindered momentum and adoption
+
+UN DE FI NE D BAS EL I NE
+No standardized, measurable metrics in place to effectively
+track and report productivity improvements
+LACK OF A I KNOWLEDGE SHARIN G
+
+Overlapping AI tools selected for implementation, some of
+which lacked user-friendly design
+
+EPAM P roprietary & Confidential.
+
+54
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+Enablement Phases
+
+The CTC Gen AI Adoption – Wave 1 Rollout
+The PoC showed opportunities for improving the AI tools
+for CTC and its team members.
+
+Pilot– September 2024
+•
+Initial scope of 4 Teams
+•
+Established Performance Measurement Metrics
+•
+Use Case: User Story Creation Agent
+
+Prep for Wave 1 (August 2024)
+1. Expanded the EliteA tool capabilities
+2. Removed the AI Jeannie tool
+3. Improved the Change Plan to include more
+Communication, Training, and Hands-On Workshops
+4. Baselined every metric that would be tracked
+5. Revised 5 Use Cases:
+1. User Story Creation Agent
+2. User Story Review Agent
+3. Creating Manual Test Cases
+4. Deduplication of Tests
+5. Generate Automation BDD Steps
+
+Wave 1 Rollout – October 2024 – December 2024
+•
+•
+•
+•
+
+Scaled to 100+ Teams
+On Boarded EliteA Champions (Chapter
+Managers)
+Evolved AI Center of Excellence
+Trained < 800 Team Members on AI, EliteA , and
+4 Use Cases
+
+Key Results
+
+•
+
+~30% of overall productivity improvement
+
+•
+
+62% user story development productivity improvement
+
+•
+
++53% test case generation and automation productivity
+improvement
+
+•
+
+Gap in AI knowledge and understanding
+EPAM P roprietary & Confidential.
+
+55
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+Beyond January 2025
+
+The CTC Gen AI Adoption – Current State
+As of January 2025, CTC completed the initial rollout of AI
+Agents and Tools within their Product Engineering
+organization.
+2024 AI Adoption Numbers:
+✓
+
+17 EPAM Experts
+
+✓
+
+6 Portfolios
+
+✓
+
+1 CTC Manager
+
+✓
+
+100+ dedicated projects
+
+✓
+
+25 Key CTC Stakeholders
+
+✓
+
+700+ configured entities
+
+✓
+
+8 EliteA Champions (Chapter
+Managers)
+100+ Teams
+
+✓
+
+50+ pages of EliteA guidance
+created in CTC’s Knowledge Portal
+
+✓
+
+CTC is continuing their AI Adoption, moving beyond
+their Product Engineering Team to other areas, with
+the intention to rollout across entire organization.
+The goal is to improve and optimize software
+development lifecycle based on most impactful use
+cases where automation and adoption of AI is
+meaningful.
+Planned efforts for 2025:
+•
+
+Build additional Prompts and Agents (QA,
+Developer, BA)
+
+•
+
+Hand ownership of AI Adoption back to CTC
+including management of EliteA , Agents,
+Training, and Knowledge Portal.
+
+EPAM P roprietary & Confidential.
+
+56
+
+AI Adoption in EBSCO
+From initial failure to organization-wide AI adoption with measurable impact
+
+EPAM P roprietary & Confidential.
+
+57
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+The EBSCO Gen AI Adoption – The Ask
+
+The experiment was not effective or scalable due to:
+
+“EBSCO was looking to validate and measure the positive
+impact of Generative AI on software development
+performance and build foundational capabilities to scale
+across the Enterprise.”
+
+UN STR UC TUR ED AD O PTI O N PRO C ES S
+
+In September 2023, EBSCO initially reached out to gain
+EPAM’s assistance with AI Adoption. EBSCO wanted to
+get started immediately with a small experiment.
+
+LIMITE D ENGAGEMEN T IN AI ADOPTION
+
+The experiment included:
+
+•
+•
+•
+•
+•
+
+GitHub CoPilot with 2 Teams (not structured)
+1 consultant from EPAM to run AI Adoption
+No AI Champions from EBSCO
+No AI Use Cases were selected and prioritized which
+limited ability to tailor training for the team
+No Metrics defined
+
+Lack of framework for integrating AI tools into existing
+workflows led to lack of visibility, decreased adoption rates and
+missed opportunities
+
+Low participation rates in AI-related activities and training
+sessions hindered momentum and adoption
+
+UN DE FI NE D BAS EL I NE
+No standardized, measurable metrics in place to effectively
+track and report productivity improvements
+LACK OF A I KNOWLEDGE SHARIN G
+
+Lack of mechanism for disseminating knowledge about use
+cases and practices that substantially boost productivity
+
+EPAM P roprietary & Confidential.
+
+58
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+Enablement Phases
+
+The EBSCO Gen AI Adoption – The Reset
+In November 2023, EPAM and EBSCO started the Gen AI
+Adoption Program to validate and measure the potential
+impact of GenAI technology on software development
+performance.
+Program scope included:
+
+1. Key Use Cases to focus on
+2. Gathering Baseline metrics and defining what success
+looks like
+3. Comprehensive AI Adoption plan implemented
+4. Development of an AI Center of Excellence
+5. More robust Change Plan which included Roadmap
+and Learning Journey
+
+PoC Phase – Nov 2023
+• Initial scope of 10 Teams
+• Established Performance Measurement Metrics
+• Identified 6 AI Champions to enable EBSCO
+adoptions of GenAI
+
+Wave 1 Rollout – April 2024
+•
+•
+•
+
+Scaled to 21 Teams
+Established AI Adoption knowledge management
+space
+Onboarded AI Champions
+
+Wave 2 Rollout – July 2024
+• Scaled to 39 Teams
+• Transferred AI Office Hours/Workshops to EBSCO
+• Identified 4 more AI Champions
+• Automated Metrics Calculation
+• Established AI Adoption Dashboard
+• Established Recognition Board
+Wave 3 Rollout – October 2024
+•
+•
+•
+•
+
+Scaled to another 20 Teams
+Transferred AI Adoption Dashboard to EBSCO
+Transferred AI Adoption Program & Metrics to
+EBSCO
+Established AI Champions governance
+EPAM P roprietary & Confidential.
+
+59
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+PoC Key Results
+
+The EBSCO Gen AI Adoption – The PoC
+PoC Details
+
+•
+
+9-14% Velocity Boost
+
+•
+
+Drafted AI Center of Excellence structure
+
+•
+
+30% decrease in code review lead time
+
+•
+
+Identified 8 AI Champions from EBSCO
+
+•
+
+10% boost of code acceptance rate
+
+•
+
+Added EPAM Roles: AI Coach, SMEs for Development
+and Testing
+
+•
+
+ROI: ~130K net
+
+•
+
+Trained all members of PoC on AI
+
+•
+
+ROI simulator projected that expanding across the
+enterprise would result in an ROI of approximately $1M.
+
+•
+
+Use Cases and Prompt Library
+
+•
+
+Trained EBSCO AI SMEs on AI Learning Journey
+
+Identified PoC Use Cases
+•
+•
+•
+•
+
+Unit Testing
+New Code
+Refactoring Explanations
+Data Preparation
+
+•
+•
+
+Documentation
+Checklist
+
+EPAM P roprietary & Confidential.
+
+60
+
+G EN AI F OR SOF TWAR E D EVE LOPM E NT
+
+AI Enablement Outcomes
+
+The EBSCO Gen AI Adoption – The Rollout
+Over the next 9 months EPAM GenAI Consulting Team helped
+EBSCO build foundational GenAI capabilities, set up an impact
+measurement framework, and drive transformation across
+the enterprise.
+
+Velocity increase
+
+10%
+
+Actual ROI
+
+$1.1M
+
+Team Budget Reduced
+
+5%
+
+Rollout Included:
+
+AI Contribution to Codebase
+
+7-9%
+
+• Scaled AI Adoption from 10 to 90+ teams including 17 ARTs, 500+ engineers.
+
+Team Members Trained
+
+500+
+
+• Built an AI Adoption Dashboards with automated metrics and real-time AI
+impact measurement.
+• Enhanced the Change Plan with hands-on coaching and shadow sessions for AI
+Champions, accelerating readiness and in-house expertise.
+• Established Center of Excellence for AI Champions, Contributors, and broader
+community participants
+• Launched an AI Space as a Knowledge base, AI Learning Hub, Use Case Library,
+Video Trainings and AI Podcasts.
+• Introduced a Recognition Program, celebrating achievements and sustaining
+engagement.
+
+Thank you for this great work. The challenge was significant, and
+it is impressive to see how well the challenge was met. And on a
+personal note, It's impressive to see how knowledgeable and
+experienced there are.
+EBSCO, SVP of Engineering
+
+• Established Governance & Transferred Key Assets and Knowledge to EBSCO,
+ensuring long-term success.
+
+EPAM P roprietary & Confidential.
+
+61
+
+GE N ERA TI VE AI FOR SOFT WA RE DEV EL OPME NT PERFORM AN CE
+
+Next Steps
+C RAWL
+
+TEAMS
+
+RUN
+
+WALK
+
+Up to 10 Teams
+
+XX Additional Teams
+
+Organization wide adoption
+
+AI Copilots
+AI Agents
+
+AI Copilots
+AI Agents
+
+AI Copilots
+AI Agents
+AI Workflows
+
+Up to 5 use cases
+
+Up to 10 Use Cases
+
+All available Use Cases
+
+Tracking of engineering metrics
+using interactive dashboards
+
+Performance measurement
+framework and productivity gains
+
+Me tri cs
+
+Use
+Case s
+
+OCM
+
+Onboarding AI Champions and
+Ongoing Hands-on Support by Gen AI
+Consultants
+Use Cases & Prompts
+Accumulation
+
+Curated set of learning
+materials
+
+Generative AI Workshops
+
+ROI Analysis
+
+EPAM P roprietary & Confidential.
+
+62
+
+Thank you
+AI/Run Team
+
+WFBAISDLC@epam.com
+Please reach out to us
+WFBAISDLCPresales@epam.com
+
+EPAM P roprietary & Confidential.
+
+70
+
+
