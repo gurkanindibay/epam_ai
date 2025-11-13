@@ -7,13 +7,14 @@
 4. [Prompts and Prompt Templates](#prompts-and-prompt-templates)
 5. [Chains](#chains)
 6. [Agents](#agents)
-7. [Chains vs Agents: When to Use Which](#chains-vs-agents-when-to-use-which)
-8. [Memory](#memory)
-9. [Retrievers and Vector Stores](#retrievers-and-vector-stores)
-10. [Document Loaders](#document-loaders)
-11. [Output Parsers](#output-parsers)
-12. [Callbacks](#callbacks)
-13. [LangChain Expression Language (LCEL)](#langchain-expression-language-lcel)
+7. [MCP (Model Context Protocol) Server](#mcp-model-context-protocol-server)
+8. [Chains vs Agents: When to Use Which](#chains-vs-agents-when-to-use-which)
+9. [Memory](#memory)
+10. [Retrievers and Vector Stores](#retrievers-and-vector-stores)
+11. [Document Loaders](#document-loaders)
+12. [Output Parsers](#output-parsers)
+13. [Callbacks](#callbacks)
+14. [LangChain Expression Language (LCEL)](#langchain-expression-language-lcel)
 
 ---
 
@@ -2384,6 +2385,963 @@ graph TD
 8. **Use Memory Wisely**: Add memory for conversational agents
 
 ---
+
+---
+
+## 📡 MCP (Model Context Protocol) Server
+
+### What is MCP?
+
+**Model Context Protocol (MCP)** is an open standard protocol developed by Anthropic that enables seamless integration between AI applications (like LLMs) and external data sources, tools, and services. It provides a standardized way for AI models to access context from various sources without custom integrations.
+
+```mermaid
+graph LR
+    A[LLM/Agent] -->|MCP Protocol| B[MCP Server]
+    B --> C[File System]
+    B --> D[Database]
+    B --> E[APIs]
+    B --> F[Git Repos]
+    B --> G[Custom Tools]
+
+    style A fill:#e1f5ff
+    style B fill:#fff4e6
+    style C fill:#f3e5f5
+    style D fill:#f3e5f5
+    style E fill:#f3e5f5
+    style F fill:#f3e5f5
+    style G fill:#f3e5f5
+```
+
+### Why MCP?
+
+| **Without MCP** | **With MCP** |
+|----------------|------------|
+| Custom integration per tool | Standardized protocol |
+| Tight coupling | Loose coupling |
+| Maintenance overhead | Plug-and-play |
+| Security concerns | Built-in security model |
+| Limited reusability | Highly reusable |
+
+---
+
+### MCP Architecture
+
+```
+┌─────────────────────────────────────────────────┐
+│                LangChain Agent                  │
+│  ┌──────────────────────────────────────────┐  │
+│  │          Agent Executor                  │  │
+│  │  - Decision Making                       │  │
+│  │  - Tool Selection                        │  │
+│  └──────────────────────────────────────────┘  │
+└────────────────────┬────────────────────────────┘
+                     │ MCP Protocol
+                     ▼
+┌─────────────────────────────────────────────────┐
+│              MCP Server                         │
+│  ┌──────────────────────────────────────────┐  │
+│  │  Resources  │  Tools  │  Prompts         │  │
+│  │  - Files    │ - APIs  │ - Templates      │  │
+│  │  - Data     │ - Utils │ - Examples       │  │
+│  └──────────────────────────────────────────┘  │
+└────────────────────┬────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────┐
+│          External Services                      │
+│   Databases │ APIs │ File Systems │ Tools       │
+└─────────────────────────────────────────────────┘
+```
+
+---
+
+### MCP Core Components
+
+#### 1. **Resources**
+Read-only data that the MCP server exposes to clients.
+
+```python
+from mcp import Resource
+
+# Define a resource
+file_resource = Resource(
+    uri="file:///path/to/data.txt",
+    name="Project Data",
+    description="Main project data file",
+    mime_type="text/plain"
+)
+```
+
+#### 2. **Tools**
+Functions that the AI can execute through the MCP server.
+
+```python
+from mcp import Tool
+
+# Define a tool
+search_tool = Tool(
+    name="search_database",
+    description="Search for records in the database",
+    input_schema={
+        "type": "object",
+        "properties": {
+            "query": {"type": "string"},
+            "limit": {"type": "integer", "default": 10}
+        },
+        "required": ["query"]
+    }
+)
+```
+
+#### 3. **Prompts**
+Reusable prompt templates that can be shared with clients.
+
+```python
+from mcp import Prompt
+
+# Define a prompt template
+analysis_prompt = Prompt(
+    name="data_analysis",
+    description="Analyze data and provide insights",
+    arguments=[
+        {"name": "data_source", "required": True},
+        {"name": "focus_area", "required": False}
+    ]
+)
+```
+
+---
+
+### Setting Up an MCP Server
+
+#### Basic MCP Server Example
+
+```python
+from mcp.server import MCPServer
+from mcp.server.stdio import stdio_server
+from mcp import Resource, Tool
+import asyncio
+
+# Create MCP server instance
+app = MCPServer("my-langchain-mcp")
+
+# Define resources
+@app.list_resources()
+async def list_resources():
+    return [
+        Resource(
+            uri="config://settings",
+            name="Application Settings",
+            description="Current app configuration",
+            mime_type="application/json"
+        )
+    ]
+
+@app.read_resource()
+async def read_resource(uri: str):
+    if uri == "config://settings":
+        return {
+            "contents": [
+                {
+                    "uri": uri,
+                    "mime_type": "application/json",
+                    "text": '{"version": "1.0", "mode": "production"}'
+                }
+            ]
+        }
+
+# Define tools
+@app.list_tools()
+async def list_tools():
+    return [
+        Tool(
+            name="calculate",
+            description="Perform mathematical calculations",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "expression": {
+                        "type": "string",
+                        "description": "Math expression to evaluate"
+                    }
+                },
+                "required": ["expression"]
+            }
+        )
+    ]
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict):
+    if name == "calculate":
+        expression = arguments["expression"]
+        try:
+            result = eval(expression)  # ⚠️ Use safely in production!
+            return [{"type": "text", "text": str(result)}]
+        except Exception as e:
+            return [{"type": "text", "text": f"Error: {str(e)}"}]
+
+# Run the server
+async def main():
+    async with stdio_server() as (read_stream, write_stream):
+        await app.run(
+            read_stream,
+            write_stream,
+            app.create_initialization_options()
+        )
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+---
+
+### Integrating MCP with LangChain
+
+#### Method 1: Using MCP Tools in LangChain Agents
+
+```python
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_openai import ChatOpenAI
+from langchain.tools import Tool
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+import httpx
+import json
+
+# Connect to MCP server
+class MCPClient:
+    def __init__(self, server_url: str):
+        self.server_url = server_url
+
+    async def call_tool(self, tool_name: str, arguments: dict):
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"{self.server_url}/tools/{tool_name}",
+                json=arguments
+            )
+            return response.json()
+
+# Create MCP client
+mcp_client = MCPClient("http://localhost:8000")
+
+# Wrap MCP tools as LangChain tools
+async def mcp_calculator(expression: str) -> str:
+    """Perform mathematical calculations via MCP server."""
+    result = await mcp_client.call_tool(
+        "calculate",
+        {"expression": expression}
+    )
+    return result[0]["text"]
+
+langchain_tools = [
+    Tool(
+        name="Calculator",
+        func=lambda x: asyncio.run(mcp_calculator(x)),
+        description="Perform mathematical calculations. Input should be a valid math expression."
+    )
+]
+
+# Create agent with MCP tools
+llm = ChatOpenAI(model="gpt-4", temperature=0)
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful assistant with access to calculation tools."),
+    ("human", "{input}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
+])
+
+agent = create_openai_functions_agent(llm, langchain_tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=langchain_tools, verbose=True)
+
+# Use the agent
+result = agent_executor.invoke({"input": "What is 25 * 34 + 100?"})
+print(result["output"])
+```
+
+#### Method 2: MCP as a Custom LangChain Tool
+
+```python
+from langchain.tools import BaseTool
+from typing import Optional, Type
+from pydantic import BaseModel, Field
+import asyncio
+
+class MCPToolInput(BaseModel):
+    tool_name: str = Field(description="Name of the MCP tool to call")
+    arguments: dict = Field(description="Arguments to pass to the tool")
+
+class MCPIntegrationTool(BaseTool):
+    name = "mcp_integration"
+    description = """
+    Execute tools from the MCP server. 
+    Available tools: calculate, search_database, file_operations
+    """
+    args_schema: Type[BaseModel] = MCPToolInput
+    mcp_client: MCPClient = None
+
+    def __init__(self, mcp_client: MCPClient):
+        super().__init__()
+        self.mcp_client = mcp_client
+
+    def _run(self, tool_name: str, arguments: dict) -> str:
+        """Synchronous execution."""
+        return asyncio.run(self._arun(tool_name, arguments))
+
+    async def _arun(self, tool_name: str, arguments: dict) -> str:
+        """Asynchronous execution."""
+        try:
+            result = await self.mcp_client.call_tool(tool_name, arguments)
+            return json.dumps(result)
+        except Exception as e:
+            return f"Error calling MCP tool: {str(e)}"
+
+# Use in agent
+mcp_client = MCPClient("http://localhost:8000")
+mcp_tool = MCPIntegrationTool(mcp_client=mcp_client)
+
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=[mcp_tool],
+    verbose=True
+)
+```
+
+---
+
+### Advanced MCP Server Features
+
+#### 1. **File System MCP Server**
+
+```python
+from mcp.server import MCPServer
+from mcp import Resource, Tool
+import os
+import json
+
+app = MCPServer("filesystem-mcp")
+
+@app.list_resources()
+async def list_resources():
+    """List available files as resources."""
+    base_path = "/path/to/project"
+    resources = []
+
+    for root, dirs, files in os.walk(base_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            resources.append(Resource(
+                uri=f"file://{file_path}",
+                name=file,
+                description=f"File: {file}",
+                mime_type="text/plain"
+            ))
+
+    return resources
+
+@app.read_resource()
+async def read_resource(uri: str):
+    """Read file content."""
+    file_path = uri.replace("file://", "")
+    with open(file_path, 'r') as f:
+        content = f.read()
+
+    return {
+        "contents": [{
+            "uri": uri,
+            "mime_type": "text/plain",
+            "text": content
+        }]
+    }
+
+@app.list_tools()
+async def list_tools():
+    return [
+        Tool(
+            name="write_file",
+            description="Write content to a file",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "path": {"type": "string"},
+                    "content": {"type": "string"}
+                },
+                "required": ["path", "content"]
+            }
+        ),
+        Tool(
+            name="search_files",
+            description="Search for text in files",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "query": {"type": "string"},
+                    "directory": {"type": "string"}
+                },
+                "required": ["query"]
+            }
+        )
+    ]
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict):
+    if name == "write_file":
+        path = arguments["path"]
+        content = arguments["content"]
+        with open(path, 'w') as f:
+            f.write(content)
+        return [{"type": "text", "text": f"Successfully wrote to {path}"}]
+
+    elif name == "search_files":
+        query = arguments["query"]
+        directory = arguments.get("directory", ".")
+        matches = []
+
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                file_path = os.path.join(root, file)
+                try:
+                    with open(file_path, 'r') as f:
+                        if query in f.read():
+                            matches.append(file_path)
+                except:
+                    pass
+
+        return [{"type": "text", "text": f"Found in: {', '.join(matches)}"}]
+```
+
+#### 2. **Database MCP Server**
+
+```python
+from mcp.server import MCPServer
+from mcp import Tool
+import sqlite3
+import json
+
+app = MCPServer("database-mcp")
+
+@app.list_tools()
+async def list_tools():
+    return [
+        Tool(
+            name="query_database",
+            description="Execute SQL query on database",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "query": {"type": "string"},
+                    "database": {"type": "string", "default": "main.db"}
+                },
+                "required": ["query"]
+            }
+        ),
+        Tool(
+            name="get_schema",
+            description="Get database schema information",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "database": {"type": "string", "default": "main.db"}
+                }
+            }
+        )
+    ]
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict):
+    if name == "query_database":
+        db_path = arguments.get("database", "main.db")
+        query = arguments["query"]
+
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        try:
+            cursor.execute(query)
+            if query.strip().upper().startswith("SELECT"):
+                results = cursor.fetchall()
+                columns = [desc[0] for desc in cursor.description]
+                data = [dict(zip(columns, row)) for row in results]
+                conn.close()
+                return [{"type": "text", "text": json.dumps(data, indent=2)}]
+            else:
+                conn.commit()
+                conn.close()
+                return [{"type": "text", "text": f"Query executed successfully"}]
+        except Exception as e:
+            conn.close()
+            return [{"type": "text", "text": f"Error: {str(e)}"}]
+
+    elif name == "get_schema":
+        db_path = arguments.get("database", "main.db")
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables = cursor.fetchall()
+
+        schema = {}
+        for table in tables:
+            table_name = table[0]
+            cursor.execute(f"PRAGMA table_info({table_name});")
+            columns = cursor.fetchall()
+            schema[table_name] = [
+                {"name": col[1], "type": col[2], "notnull": col[3], "pk": col[5]}
+                for col in columns
+            ]
+
+        conn.close()
+        return [{"type": "text", "text": json.dumps(schema, indent=2)}]
+```
+
+#### 3. **API Integration MCP Server**
+
+```python
+from mcp.server import MCPServer
+from mcp import Tool
+import httpx
+import json
+
+app = MCPServer("api-integration-mcp")
+
+@app.list_tools()
+async def list_tools():
+    return [
+        Tool(
+            name="weather_api",
+            description="Get weather information for a city",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "city": {"type": "string"},
+                    "units": {"type": "string", "enum": ["metric", "imperial"], "default": "metric"}
+                },
+                "required": ["city"]
+            }
+        ),
+        Tool(
+            name="github_api",
+            description="Search GitHub repositories",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "query": {"type": "string"},
+                    "sort": {"type": "string", "default": "stars"}
+                },
+                "required": ["query"]
+            }
+        )
+    ]
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict):
+    if name == "weather_api":
+        city = arguments["city"]
+        units = arguments.get("units", "metric")
+        api_key = "YOUR_API_KEY"
+
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"https://api.openweathermap.org/data/2.5/weather",
+                params={"q": city, "units": units, "appid": api_key}
+            )
+            data = response.json()
+
+            result = {
+                "city": data["name"],
+                "temperature": data["main"]["temp"],
+                "description": data["weather"][0]["description"],
+                "humidity": data["main"]["humidity"]
+            }
+
+            return [{"type": "text", "text": json.dumps(result, indent=2)}]
+
+    elif name == "github_api":
+        query = arguments["query"]
+        sort = arguments.get("sort", "stars")
+
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                "https://api.github.com/search/repositories",
+                params={"q": query, "sort": sort, "per_page": 5}
+            )
+            data = response.json()
+
+            repos = [
+                {
+                    "name": item["full_name"],
+                    "stars": item["stargazers_count"],
+                    "description": item["description"],
+                    "url": item["html_url"]
+                }
+                for item in data["items"]
+            ]
+
+            return [{"type": "text", "text": json.dumps(repos, indent=2)}]
+```
+
+---
+
+### Complete LangChain + MCP Example
+
+```python
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_openai import ChatOpenAI
+from langchain.tools import Tool
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+import asyncio
+import httpx
+import json
+
+# MCP Client
+class MCPClient:
+    def __init__(self, server_url: str):
+        self.server_url = server_url
+        self.available_tools = {}
+
+    async def discover_tools(self):
+        """Discover available tools from MCP server."""
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"{self.server_url}/list-tools",
+                json={}
+            )
+            tools = response.json()
+            self.available_tools = {tool["name"]: tool for tool in tools}
+            return tools
+
+    async def call_tool(self, tool_name: str, arguments: dict):
+        """Call a tool on the MCP server."""
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"{self.server_url}/call-tool",
+                json={"name": tool_name, "arguments": arguments}
+            )
+            return response.json()
+
+# Initialize MCP client
+mcp_client = MCPClient("http://localhost:8000")
+
+# Discover tools asynchronously
+async def setup_mcp_tools():
+    await mcp_client.discover_tools()
+
+    langchain_tools = []
+
+    # Convert MCP tools to LangChain tools
+    for tool_name, tool_info in mcp_client.available_tools.items():
+        def create_tool_func(name):
+            async def tool_func(arguments_json: str) -> str:
+                """Execute MCP tool."""
+                try:
+                    arguments = json.loads(arguments_json)
+                    result = await mcp_client.call_tool(name, arguments)
+                    return json.dumps(result)
+                except Exception as e:
+                    return f"Error: {str(e)}"
+            return tool_func
+
+        langchain_tools.append(Tool(
+            name=tool_name,
+            func=lambda x, name=tool_name: asyncio.run(create_tool_func(name)(x)),
+            description=tool_info["description"]
+        ))
+
+    return langchain_tools
+
+# Setup agent
+async def create_mcp_agent():
+    tools = await setup_mcp_tools()
+
+    llm = ChatOpenAI(model="gpt-4", temperature=0)
+
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", """You are a helpful assistant with access to various tools through an MCP server.
+        These tools can help you access files, databases, APIs, and perform calculations.
+        Use the tools wisely to answer user questions accurately."""),
+        ("human", "{input}"),
+        MessagesPlaceholder(variable_name="agent_scratchpad"),
+    ])
+
+    agent = create_openai_functions_agent(llm, tools, prompt)
+    agent_executor = AgentExecutor(
+        agent=agent,
+        tools=tools,
+        verbose=True,
+        max_iterations=10,
+        handle_parsing_errors=True
+    )
+
+    return agent_executor
+
+# Run the agent
+async def main():
+    agent = await create_mcp_agent()
+
+    # Example queries
+    queries = [
+        "What files are in the project directory?",
+        "Calculate 156 * 89 + 234",
+        "What's the weather in New York?",
+        "Search GitHub for 'langchain' repositories"
+    ]
+
+    for query in queries:
+        print(f"\n{'='*60}")
+        print(f"Query: {query}")
+        print(f"{'='*60}")
+        result = await agent.ainvoke({"input": query})
+        print(f"Result: {result['output']}\n")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+---
+
+### MCP Server Deployment
+
+#### Docker Deployment
+
+```dockerfile
+# Dockerfile for MCP Server
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy MCP server code
+COPY mcp_server.py .
+
+# Expose port
+EXPOSE 8000
+
+# Run server
+CMD ["python", "mcp_server.py"]
+```
+
+```yaml
+# docker-compose.yml
+version: '3.8'
+
+services:
+  mcp-server:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MCP_PORT=8000
+      - DATABASE_URL=sqlite:///data/main.db
+    volumes:
+      - ./data:/app/data
+      - ./files:/app/files
+    restart: unless-stopped
+
+  langchain-agent:
+    build: ./agent
+    depends_on:
+      - mcp-server
+    environment:
+      - MCP_SERVER_URL=http://mcp-server:8000
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped
+```
+
+#### Running with FastAPI
+
+```python
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import Dict, List, Any
+import uvicorn
+
+app = FastAPI(title="MCP Server", version="1.0.0")
+
+class ToolCallRequest(BaseModel):
+    name: str
+    arguments: Dict[str, Any]
+
+class ToolCallResponse(BaseModel):
+    result: List[Dict[str, str]]
+
+# Store available tools
+tools_registry = {}
+
+@app.post("/list-tools")
+async def list_tools():
+    """List all available tools."""
+    return list(tools_registry.values())
+
+@app.post("/call-tool", response_model=ToolCallResponse)
+async def call_tool(request: ToolCallRequest):
+    """Execute a tool."""
+    if request.name not in tools_registry:
+        raise HTTPException(status_code=404, detail="Tool not found")
+
+    tool_handler = tools_registry[request.name]["handler"]
+
+    try:
+        result = await tool_handler(request.arguments)
+        return ToolCallResponse(result=result)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint."""
+    return {"status": "healthy", "tools_count": len(tools_registry)}
+
+# Register tools
+async def calculator_handler(arguments: Dict) -> List[Dict]:
+    expression = arguments["expression"]
+    result = eval(expression)  # ⚠️ Use safely!
+    return [{"type": "text", "text": str(result)}]
+
+tools_registry["calculate"] = {
+    "name": "calculate",
+    "description": "Perform calculations",
+    "handler": calculator_handler,
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "expression": {"type": "string"}
+        },
+        "required": ["expression"]
+    }
+}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+---
+
+### Security Best Practices
+
+#### 1. **Authentication**
+
+```python
+from fastapi import FastAPI, Depends, HTTPException, Security
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+import secrets
+
+app = FastAPI()
+security = HTTPBearer()
+
+# Simple token-based auth
+VALID_TOKENS = {
+    "your-secret-token-here": "langchain-client"
+}
+
+async def verify_token(credentials: HTTPAuthorizationCredentials = Security(security)):
+    token = credentials.credentials
+    if token not in VALID_TOKENS:
+        raise HTTPException(status_code=401, detail="Invalid token")
+    return VALID_TOKENS[token]
+
+@app.post("/call-tool")
+async def call_tool(
+    request: ToolCallRequest,
+    client: str = Depends(verify_token)
+):
+    # Tool execution logic
+    pass
+```
+
+#### 2. **Input Validation**
+
+```python
+from pydantic import BaseModel, validator, Field
+from typing import Any, Dict
+
+class SafeToolCallRequest(BaseModel):
+    name: str = Field(..., regex="^[a-zA-Z0-9_]+$")  # Only alphanumeric
+    arguments: Dict[str, Any]
+
+    @validator('name')
+    def validate_tool_name(cls, v):
+        allowed_tools = ['calculate', 'search', 'query_database']
+        if v not in allowed_tools:
+            raise ValueError(f"Tool {v} not allowed")
+        return v
+
+    @validator('arguments')
+    def validate_arguments(cls, v, values):
+        # Add custom validation logic
+        if 'name' in values and values['name'] == 'query_database':
+            if 'query' in v:
+                # Prevent dangerous SQL
+                dangerous_keywords = ['DROP', 'DELETE', 'UPDATE', 'INSERT']
+                query_upper = v['query'].upper()
+                if any(keyword in query_upper for keyword in dangerous_keywords):
+                    raise ValueError("Dangerous SQL operation not allowed")
+        return v
+```
+
+#### 3. **Rate Limiting**
+
+```python
+from fastapi import FastAPI, Request
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+limiter = Limiter(key_func=get_remote_address)
+app = FastAPI()
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+@app.post("/call-tool")
+@limiter.limit("10/minute")  # 10 requests per minute
+async def call_tool(request: Request, tool_request: ToolCallRequest):
+    # Tool execution logic
+    pass
+```
+
+---
+
+### MCP vs Traditional Integration
+
+| **Aspect** | **Traditional** | **MCP** |
+|-----------|----------------|------|
+| **Setup Complexity** | High (custom per tool) | Low (standardized protocol) |
+| **Reusability** | Limited | High |
+| **Maintenance** | Difficult | Easy |
+| **Security** | Custom implementation | Built-in standards |
+| **Scalability** | Challenging | Designed for scale |
+| **Tool Discovery** | Manual | Automatic |
+| **Protocol** | Custom | Standardized |
+
+---
+
+### When to Use MCP with LangChain
+
+✅ **Use MCP When:**
+- You have multiple data sources to integrate
+- You want standardized tool access
+- You need reusable components across projects
+- You require centralized security/authentication
+- You want to separate tool logic from agent logic
+- You need dynamic tool discovery
+
+❌ **Don't Use MCP When:**
+- You have only 1-2 simple tools
+- Performance overhead is critical
+- You need ultra-low latency
+- Tools are tightly coupled to business logic
+
+---
+
+### Key Takeaways
+
+1. **MCP standardizes** how AI agents access external tools and data
+2. **LangChain + MCP** = powerful, maintainable agent architectures
+3. **Resources, Tools, Prompts** are the three core MCP components
+4. **Security** should be built into your MCP server from the start
+5. **Async operations** are essential for MCP performance
+6. **Docker deployment** makes MCP servers production-ready
+7. **FastAPI** is an excellent choice for HTTP-based MCP servers
 
 ---
 
